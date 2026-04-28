@@ -5,6 +5,31 @@
   <title>Documents App</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#c76f2d',
+            'primary-fixed': '#f5dfcb',
+            secondary: '#817a73',
+            surface: '#f3eee8',
+            'surface-container-lowest': '#ffffff',
+            'surface-container-low': '#f7f3ee',
+            'surface-container-high': '#e8e1d8',
+            'surface-container-highest': '#dfd6cb',
+            'on-surface': '#3b3027',
+            'outline-variant': '#d8cfc3'
+          },
+          fontFamily: {
+            'serif-heading': ['EB Garamond', 'Georgia', 'serif'],
+            'sans-body': ['Manrope', 'Segoe UI', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
 </head>
 <body>
   <app-root></app-root>

@@ -1,10 +1,11 @@
 import { HttpInterceptorFn } from '@angular/common/http';
+import { inject } from '@angular/core';
+import { AuthSessionService } from '../services/auth-session.service';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
-  // Simulamos la obtención del token desde el local storage o un servicio de autenticación
-  const token = localStorage.getItem('auth_token');
+  const authSessionService = inject(AuthSessionService);
+  const token = authSessionService.accessToken();
 
-  // Si hay token, clonamos la petición para añadir el header de Authorization
   if (token) {
     const authReq = req.clone({
       setHeaders: {
@@ -14,6 +15,5 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
     return next(authReq);
   }
 
-  // Si no hay token, dejamos pasar la petición tal cual
   return next(req);
 };

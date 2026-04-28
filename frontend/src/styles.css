@@ -1,9 +1,39 @@
-/* Global styles */
-html, body {
-  margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+:root {
+  --font-serif-heading: 'EB Garamond', Georgia, serif;
+  --font-sans-body: 'Manrope', 'Segoe UI', sans-serif;
+  --color-on-surface: #3b3027;
+}
+
+.serif-heading {
+  font-family: var(--font-serif-heading);
+  letter-spacing: -0.01em;
+}
+
+.sans-body {
+  font-family: var(--font-sans-body);
+}
+
+html,
+body {
   height: 100%;
 }
 
 body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  background: radial-gradient(circle at 50% -10%, #fbf8f4 0%, #f3eee8 42%, #efe9e1 100%);
+  color: var(--color-on-surface);
+  font-family: var(--font-sans-body);
+}
+
+app-root {
+  display: block;
+  min-height: 100%;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 450, 'GRAD' 0, 'opsz' 24;
+  line-height: 1;
 }

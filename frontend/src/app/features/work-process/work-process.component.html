@@ -1,0 +1,37 @@
+<app-side-nav></app-side-nav>
+<app-top-appbar></app-top-appbar>
+
+<main class="min-h-screen px-4 pt-20 pb-40 md:ml-64 md:px-12 md:pt-24 md:pb-32">
+  <div class="max-w-5xl mx-auto space-y-12">
+    <section>
+      <h1 class="serif-heading text-4xl md:text-5xl font-semibold text-on-surface leading-tight">Create New Manuscript</h1>
+      <p class="sans-body text-stone-500 mt-2 text-base md:text-lg max-w-2xl">Transform your raw documents and research notes into a polished, professional report using our advanced processing engine.</p>
+    </section>
+
+    <section class="bg-surface-container-low rounded-xl p-10 border border-outline-variant/60">
+      <div class="flex flex-col gap-4">
+        <label class="serif-heading text-3xl font-medium text-on-surface" for="agent-instructions">Instructions for the Agent</label>
+        <div class="relative">
+          <textarea id="agent-instructions" rows="5" placeholder="Enter specific guidelines or tone instructions for the AI assistant..." class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-6 sans-body text-on-surface placeholder-stone-400 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none shadow-inner"></textarea>
+          <div class="absolute bottom-4 right-6 flex items-center gap-2 text-stone-400">
+            <span class="material-symbols-outlined text-sm">auto_awesome</span>
+            <span class="text-[10px] font-bold uppercase tracking-widest">Sahara Engine Active</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <app-upload-area></app-upload-area>
+
+    <app-processing-pipeline></app-processing-pipeline>
+
+    <section class="flex justify-center pt-8 pb-12">
+      <button (click)="startSimulation()" class="flex w-full md:w-auto items-center justify-center gap-3 bg-primary text-white px-8 md:px-12 py-4 md:py-5 rounded-xl text-lg md:text-xl font-bold shadow-xl shadow-primary/20 hover:shadow-2xl hover:scale-[1.02] active:scale-[0.98] transition-all group">
+        <span class="material-symbols-outlined text-2xl group-hover:rotate-12 transition-transform">rocket_launch</span>
+        <span>Start Processing Manuscript</span>
+      </button>
+    </section>
+  </div>
+</main>
+
+<app-global-progress></app-global-progress>
