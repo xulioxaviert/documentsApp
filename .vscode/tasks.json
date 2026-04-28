@@ -1,0 +1,18 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "frontend:start",
+      "type": "shell",
+      "command": "npm --prefix ${workspaceFolder}/frontend start",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "frontend:stop",
+      "type": "shell",
+      "command": "pids=$(lsof -ti tcp:4200); if [ -n \"$pids\" ]; then kill $pids && echo \"Stopped process(es): $pids\"; else echo \"No process is listening on port 4200\"; fi",
+      "problemMatcher": []
+    }
+  ]
+}
